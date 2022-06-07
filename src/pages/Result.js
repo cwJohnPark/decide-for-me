@@ -1,8 +1,8 @@
 import React from 'react';
-//css in js
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
-import {useNavigate, userNavigate, useSearchParams} from 'react-router-dom';
+import Adfit from './KakaoAdfit';
+import {useNavigate, useSearchParams} from 'react-router-dom';
 
 const Result = () => { 
 
@@ -15,8 +15,8 @@ const Result = () => {
     React.useEffect(() => 
     {
         setRes(text);
-        console.log('res: ', text);
     }, [text]);
+
 
     return (
         <Wrapper>
@@ -24,6 +24,7 @@ const Result = () => {
                 <div>{res}</div>
                 <Button style = {{fontFamily: "Pak_Yong_jun"}} 
                 onClick = {() => navigate('/')}>다시 하기</Button>
+                <Adfit />
         </Wrapper>
     )
 }

@@ -25,13 +25,11 @@ const IndexComponent = () => {
 
     setItems(items.concat(newItem));
     setText("");
-    console.log(items);
   };
 
   const navigate = useNavigate();
 
   const handleClickButton = () => {
-    console.log('배열', items);
 
     const text = items[getRandomInt(0, items.length)].text; 
 
