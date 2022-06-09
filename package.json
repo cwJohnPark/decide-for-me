@@ -20,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "aws s3 sync ./build s3://vlpt-sample-deploy --profile=sample-deploy-s3"
+    "deploy": "aws s3 sync ./build s3://decide-for-me --profile=decide-for-me"
   },
   "eslintConfig": {
     "extends": [

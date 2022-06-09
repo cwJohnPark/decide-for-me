@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 const Adfit = () => {
     React.useEffect(() => 
@@ -22,8 +23,14 @@ const Adfit = () => {
     }, []);
 
     return (
-        <div className="adfit" />
+        <AdfitWrapper className="adfit" />
     );
 }
 
 export default Adfit;
+
+const AdfitWrapper = styled.div`
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+`

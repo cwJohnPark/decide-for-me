@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import styled from 'styled-components';
 import InputComponent from "./InputComponent";
 import Button from 'react-bootstrap/Button';
-import { createSearchParams, useNavigate} from "react-router-dom";
+import { createSearchParams, useNavigate } from "react-router-dom";
 
 const IndexComponent = () => {
   const [items, setItems] = useState([]);
@@ -31,26 +32,29 @@ const IndexComponent = () => {
 
   const handleClickButton = () => {
 
-    const text = items[getRandomInt(0, items.length)].text; 
+    const text = items[getRandomInt(0, items.length)].text;
+    console.log(`test + ${text}`);
 
     navigate({
       pathname: "/result",
       search: `?${createSearchParams({ //자동으로 쿼리 파람으로 넣어줌.
         text: text
-     })}`
+      })}`
     })
   }
 
   return (
-    <div>
+    <Wrapper>
       <h3>Decide For Me</h3>
-      <Button onClick = {handleClickButton}> 선택! </Button>
+      <SelectButton> 
+          <Button onClick={handleClickButton}> Go For It ! </Button> 
+      </SelectButton>
       <InputComponent items={items} />
       <form onSubmit={handleSubmit}>
         <input id="newInputBox" onChange={handleChange} value={text} />
         <button>Add #{items.length + 1}</button>
       </form>
-    </div>
+    </Wrapper>
   );
 }
 
@@ -61,3 +65,12 @@ function getRandomInt(min, max) {
 }
 
 export default IndexComponent;
+
+const Wrapper = styled.div`
+  text-align: center;
+  margin: auto;
+`
+
+const SelectButton = styled.div`
+  margin: 10% auto;
+`
